@@ -1,0 +1,66 @@
+#STACK
+def balik_kata(kata):
+    stack = []
+    for balik in kata:
+        stack.append(balik)
+
+    hasil = ""
+    while stack:
+        hasil += stack.pop()
+ 
+    return hasil
+
+kata = "engginering" 
+print ("Kata asli:", kata)
+print("Kata terbalik:", balik_kata(kata))
+
+
+from collections import deque
+queue = deque()
+def enqueue(nama):
+    queue.append(nama)
+    print(nama,"telah masuk ke dalam antrian")
+
+def dequeue():
+    if queue:
+        nama = queue.popleft()
+        print(nama,"telah dilayani dan keluar dari antrian")
+        
+    else:
+        print("antrian kosong tidak ada yang bisa dilayani")
+def tampilkan():
+    print("antrian saat ini:",queue)
+
+enqueue("baiqrabiq")
+enqueue("tanzila")
+enqueue("pia")
+tampilkan()
+dequeue()
+tampilkan()
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+    def traversal(head):
+        current = head
+        while current:
+            print(current.data, end="->")
+            current = current.next
+        print("end")
+
+n1 = Node(10)
+n2 = Node(20)
+n3 = Node(30)
+n4 = Node(40)
+n5 = Node(50)
+
+n1.next = n2
+n2.next = n3
+n3.next = n4
+n4.next = n5
+
+Node.traversal(n1)
+
